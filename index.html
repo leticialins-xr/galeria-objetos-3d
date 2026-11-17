@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Galeria interativa de objetos históricos digitalizados em 3D pelo InovaGov Acre."
+    />
+    <meta name="theme-color" content="#173f35" />
+    <title>Acervo 3D | InovaGov Acre</title>
+  </head>
+  <body>
+    <div id="app">
+      <header class="site-header">
+        <a class="brand" href="./" aria-label="Página inicial do Acervo 3D">
+          <span class="brand-mark" aria-hidden="true">3D</span>
+          <span>
+            <strong>Acervo 3D</strong>
+            <small>InovaGov Acre</small>
+          </span>
+        </a>
+
+        <p class="header-note">Objetos históricos digitalizados</p>
+      </header>
+
+      <main class="gallery-layout">
+        <aside class="catalog-panel" aria-label="Lista de objetos">
+          <div class="catalog-heading">
+            <p class="eyebrow">Coleção digital</p>
+            <h1>Objetos do acervo</h1>
+            <p>Selecione um item para explorar o modelo tridimensional.</p>
+          </div>
+
+          <nav id="object-list" class="object-list" aria-label="Objetos disponíveis"></nav>
+        </aside>
+
+        <section class="viewer-panel" aria-labelledby="object-title">
+          <div class="viewer-heading">
+            <div>
+              <p id="object-counter" class="eyebrow">Objeto 1 de 7</p>
+              <h2 id="object-title">Batelão</h2>
+            </div>
+
+            <a id="download-link" class="download-link" href="#" download>
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M12 3v12m0 0 5-5m-5 5-5-5M5 19h14" />
+              </svg>
+              Baixar GLB
+            </a>
+          </div>
+
+          <div id="viewer" class="viewer-stage">
+            <canvas id="model-canvas" aria-label="Visualizador tridimensional"></canvas>
+
+            <div id="loading" class="loading-card" role="status" aria-live="polite">
+              <span class="spinner" aria-hidden="true"></span>
+              <span id="loading-text">Carregando modelo…</span>
+            </div>
+
+            <div id="viewer-error" class="error-card" hidden>
+              <strong>Não foi possível abrir o modelo.</strong>
+              <span>Recarregue a página ou escolha outro objeto.</span>
+            </div>
+
+            <div class="viewer-tools" aria-label="Controles do visualizador">
+              <button id="rotate-button" class="tool-button active" type="button" aria-pressed="true">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M20 7v5h-5M4 17v-5h5M6.1 8A7 7 0 0 1 18.8 6L20 7M4 17l1.2 1A7 7 0 0 0 17.9 16" />
+                </svg>
+                Girar
+              </button>
+
+              <button id="reset-button" class="tool-button" type="button">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M4 4v6h6M5.5 15a8 8 0 1 0 .5-7L4 10" />
+                </svg>
+                Reposicionar
+              </button>
+
+              <button id="fullscreen-button" class="tool-button" type="button">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M8 3H3v5M16 3h5v5M8 21H3v-5M16 21h5v-5" />
+                </svg>
+                Tela cheia
+              </button>
+            </div>
+
+            <p class="interaction-hint">Arraste para girar · Role ou aproxime os dedos para ampliar</p>
+          </div>
+
+          <div class="viewer-footer">
+            <p><span class="status-dot" aria-hidden="true"></span> Modelo otimizado para visualização na web</p>
+            <p id="model-size">6,5 MB · Formato GLB</p>
+          </div>
+        </section>
+      </main>
+
+      <footer class="site-footer">
+        <span>InovaGov · Governo do Estado do Acre</span>
+        <span>Acervo digital 2026</span>
+      </footer>
+    </div>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
